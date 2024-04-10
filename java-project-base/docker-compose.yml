@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: my-mysql-container
+    environment:
+      MYSQL_DATABASE: faketify
+      MYSQL_ROOT_PASSWORD: 1
+    ports:
+      - '3308:3306'
+      - '33063:33060'
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
